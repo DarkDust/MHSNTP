@@ -39,7 +39,7 @@
     if (!self) return nil;
     
     _lock = [[NSRecursiveLock alloc] init];
-    _lock.name = self.className;
+    _lock.name = [self className];
     _clients = @[ ];
     _clientEntries = [NSMutableDictionary dictionary];
     
