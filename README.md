@@ -1,10 +1,14 @@
 # MHSNTP – SNTP pod
 
-This is an Objective-C pod for easy SNTP client support. It's main goals are:
+This is a pod for easy SNTP client support in macOS, iOS and tvOS. It's main
+goals are:
 
 * [RFC 4330](https://tools.ietf.org/html/rfc4330) compliance.
 * As much covered by unit tests as possible.
 * Modern Objective-C syntax for good support of both Objective-C and Swift.
+
+This pod does not alter the system's clock. It merely provides easy access to
+networked time for your apps.
 
 ## Current limitations
 
@@ -12,13 +16,15 @@ This is an Objective-C pod for easy SNTP client support. It's main goals are:
 
 ## Dependencies
 
-This pod requires [CocoaAsyncSocket](https://github.com/robbiehanson/CocoaAsyncSocket) to handle the UDP communication.
+This pod requires [CocoaAsyncSocket](https://github.com/robbiehanson/CocoaAsyncSocket)
+to handle the UDP communication.
 
 ## Usage
 
 The most simple way to use this pod is to instantiate a `MHSNTPManager`
 instance and add Apple's NTP servers (there's a convenience method for that).
 
+Objective-C example:
 ```Objective-C
 @import MHSNTP
 // or
@@ -36,6 +42,7 @@ NSDate * now = [sntp now];
 NSTimeInterval offset = [sntp systemClockOffset];
 ```
 
+Swift example:
 ```Swift
 import MHSNTP
 
