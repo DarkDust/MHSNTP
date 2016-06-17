@@ -19,6 +19,30 @@ networked time for your apps.
 This pod requires [CocoaAsyncSocket](https://github.com/robbiehanson/CocoaAsyncSocket)
 to handle the UDP communication.
 
+## Integration in your project
+
+There are two ways to integrate this pod: as module or not. To integrate using
+modules, add `use_frameworks!` to your `Podfile`. After this, you reference the
+pod like this:
+
+```
+// Objective-C
+@import MHSNTP;
+
+// Swift
+import MHSNTP
+```
+
+If you are not using modules, you need to import the umbrella header in
+Objective-C:
+
+```Objective-C
+#import <MHSNTP/MHSNTP>
+```
+
+When using the pod in Swift without modules, you need add `#import <MHSNTP/MHSNTP>`
+to your bridging header. No `import MHSNTP` is needed in this case.
+
 ## Usage
 
 The most simple way to use this pod is to instantiate a `MHSNTPManager`
@@ -26,10 +50,6 @@ instance and add Apple's NTP servers (there's a convenience method for that).
 
 Objective-C example:
 ```Objective-C
-@import MHSNTP
-// or
-#import <MHSNTP/MHSNTP.h>
-
 // Store the instance in a property or global variable to keep it alive.
 MHSNTPManager * sntp = [[MHSNTPManager alloc] init];
 [sntp addAppleSNTPServers];
@@ -44,8 +64,6 @@ NSTimeInterval offset = [sntp systemClockOffset];
 
 Swift example:
 ```Swift
-import MHSNTP
-
 let sntp = MHSNTPManager()
 sntp.addAppleSNTPServers()
 
