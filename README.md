@@ -1,5 +1,9 @@
 # MHSNTP – SNTP pod
 
+![CocoaPods version](https://img.shields.io/cocoapods/v/MHSNTP.svg?maxAge=2592000)
+![CocoaPods license](https://img.shields.io/cocoapods/l/MHSNTP.svg?maxAge=2592000)
+
+
 This is a pod for easy SNTP client support in macOS, iOS and tvOS. It's main
 goals are:
 
@@ -20,6 +24,13 @@ This pod requires [CocoaAsyncSocket](https://github.com/robbiehanson/CocoaAsyncS
 to handle the UDP communication.
 
 ## Integration in your project
+
+This project is available as a CocoaPod, so you simply need to add the following
+line to your `Podfile`:
+
+```
+pod 'MHSNTP'
+```
 
 There are two ways to integrate this pod: as module or not. To integrate using
 modules, add `use_frameworks!` to your `Podfile`. After this, you reference the
