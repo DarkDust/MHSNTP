@@ -48,10 +48,10 @@ If you are not using modules, you need to import the umbrella header in
 Objective-C:
 
 ```Objective-C
-#import <MHSNTP/MHSNTP>
+#import <MHSNTP/MHSNTP.h>
 ```
 
-When using the pod in Swift without modules, you need add `#import <MHSNTP/MHSNTP>`
+When using the pod in Swift without modules, you need add `#import <MHSNTP/MHSNTP.h>`
 to your bridging header. No `import MHSNTP` is needed in this case.
 
 ## Usage
